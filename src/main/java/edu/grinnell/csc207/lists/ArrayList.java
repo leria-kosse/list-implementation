@@ -9,8 +9,15 @@ public class ArrayList {
      * 
      * @param value the value to add to the end of the list
      */
+
+    int[] data;
+    int size;
+
+
+
     public void add(int value) {
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
+        data[size] = value;
+
     }
 
     /**

@@ -1,5 +1,7 @@
 package edu.grinnell.csc207.lists;
 
+import java.util.Arrays;
+
 /**
  * An array-based implementation of the list ADT.
  */
@@ -10,10 +12,23 @@ public class ArrayList {
      * @param value the value to add to the end of the list
      */
 
-    int[] data;
-    int size;
+    private static int Default_cap = 10;
 
+   
+    
+    private int[] data;
+    private int size;
 
+    public ArrayList(int value){   
+        this.data[] = ;
+        this.size = 0;
+    }
+
+    private void ensureCapacity() {
+        if (size == data.length) {
+            data = Arrays.copyOf(data, data.length * 2);
+        }
+    }
 
     public void add(int value) {
         data[size] = value;

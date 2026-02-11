@@ -5,6 +5,9 @@ package edu.grinnell.csc207.lists;
  */
 public class LinkedList {
 
+    /**
+     * A single node of a linked list.
+     */
     private static class Node {
         public int value;
         public Node next;
@@ -20,19 +23,43 @@ public class LinkedList {
     }
 
     /**
+     * The first node of the list.
+     */
+    private Node head;
+    private int size;
+
+    /**
+     * The constructor for a new empty list.
+     */
+    public LinkedList() {
+        this.head = null;
+        this.size = 0;
+    }
+
+    /**
      * Adds <code>value</code> to the end of the list
      * 
      * @param value the value to add to the end of the list
      */
     public void add(int value) {
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
+        Node newNode = new Node(value);
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+        size++;
     }
 
     /**
      * @return the number of elements in the list
      */
     public int size() {
-        throw new UnsupportedOperationException("Unimplemented method 'size'");
+        return size;
     }
 
     /**
@@ -40,8 +67,17 @@ public class LinkedList {
      * @return the value at the specified <code>index</code>
      */
     public int get(int index) {
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
-    }
+        // non negetive and smaller then size
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        Node current = head;
+
+        
+        
+
+
+        
 
     /**
      * Removes the value at <code>index</code> from the list
@@ -52,4 +88,5 @@ public class LinkedList {
     public int remove(int index) {
         throw new UnsupportedOperationException("Unimplemented method 'remove'");
     }
+}
 }

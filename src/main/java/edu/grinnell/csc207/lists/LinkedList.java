@@ -132,6 +132,15 @@ public class LinkedList {
         return size == 0;
     }
 
+    public void clear()
+    {
+        for(int i = size-1; i>=0; i--)
+        {
+            remove(i);
+        }
+
+    }
+
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
         list.add(10);
@@ -143,6 +152,7 @@ public class LinkedList {
         System.out.println("Get: " + list.get(1));
         System.out.println("Size: " + list.size());
         System.out.println("Get: " + list.get(1));
+        list.clear();
         System.out.println("Empty: " + list.isEmpty());
     }
 }

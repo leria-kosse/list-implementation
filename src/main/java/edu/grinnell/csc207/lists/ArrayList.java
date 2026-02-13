@@ -89,9 +89,18 @@ public class ArrayList {
         return removed;
     }
 
-     public boolean isEmpty()
+    public boolean isEmpty()
     {
         return size == 0;
+    }
+
+    public void clear()
+    {
+        for(int i = size-1; i>=0; i--)
+        {
+            remove(i);
+        }
+
     }
 
     public static void main(String[] args) {
@@ -105,6 +114,8 @@ public class ArrayList {
         System.out.println("Get: " + list.get(1));
         System.out.println("Size: " + list.size());
         System.out.println("Get: " + list.get(1));
+        list.clear();
+        System.out.println("Empty: " + list.isEmpty());
         
     }
 }

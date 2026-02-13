@@ -148,6 +148,29 @@ public class LinkedList {
 
     }
 
+    /**
+     * Returns the index of a given value in the list. If the value is not in the list, 
+     * it return -1. Worst case runtime-O(n)
+     * 
+     * @param value to be found
+     * @return the index of the 'value' element or -1 if not in the list.
+     */
+    public int indexOf(int value)
+    {
+        int i;
+        Node current = head;
+        for (i = 0; i < size; i++)
+        {
+            if (current.value == value)
+            {
+                return i;
+            }
+            current = current.next;
+        }
+        return -1;
+    }
+
+
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
         list.add(10);
@@ -159,7 +182,9 @@ public class LinkedList {
         System.out.println("Get: " + list.get(1));
         System.out.println("Size: " + list.size());
         System.out.println("Get: " + list.get(1));
+        System.out.println("Index of 30: " + list.indexOf(30));
         list.clear();
         System.out.println("Empty: " + list.isEmpty());
+       
     }
 }

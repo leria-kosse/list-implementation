@@ -131,7 +131,7 @@ public class LinkedList {
     /**
      * Reports whether the list is empty. Worst case runtime-O(1)
      * 
-     * @return true or false based on whether teh list is empty.
+     * @return true or false based on whether the list is empty.
      */
     public boolean isEmpty() {
         return size == 0;

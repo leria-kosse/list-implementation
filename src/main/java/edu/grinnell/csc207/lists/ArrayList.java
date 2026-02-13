@@ -2,6 +2,8 @@ package edu.grinnell.csc207.lists;
 
 import java.util.Arrays;
 
+import org.w3c.dom.Node;
+
 /**
  * An array-based implementation of the list ADT.
  */
@@ -110,6 +112,27 @@ public class ArrayList {
 
     }
 
+    /**
+     * Returns the index of a given value in the list. If the value is not in the list, 
+     * it return -1. Worst case runtime-O(n)
+     * 
+     * @param value to be found
+     * @return the index of the 'value' element or -1 if not in the list.
+     */
+    public int indexOf(int value)
+    {
+        int i;
+        for (i = 0; i < size; i++)
+        {
+            if (data[i] == value)
+                {
+                    return i;
+                }
+        }
+        return -1;
+    }
+
+
     public static void main(String[] args) {
         ArrayList list = new ArrayList();
         list.add(10);
@@ -121,6 +144,7 @@ public class ArrayList {
         System.out.println("Get: " + list.get(1));
         System.out.println("Size: " + list.size());
         System.out.println("Get: " + list.get(1));
+        System.out.println("Index of 10: " + list.indexOf(10));
         list.clear();
         System.out.println("Empty: " + list.isEmpty());
 

@@ -89,6 +89,11 @@ public class ArrayList {
         return removed;
     }
 
+     public boolean isEmpty()
+    {
+        return size == 0;
+    }
+
     public static void main(String[] args) {
         ArrayList list = new ArrayList();
         list.add(10);

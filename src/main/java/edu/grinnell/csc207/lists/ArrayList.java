@@ -8,19 +8,21 @@ import java.util.Arrays;
 public class ArrayList {
     /**
      * Adds <code>value</code> to the end of the list
-     * 
      * @param value the value to add to the end of the list
      */
 
-    private static int Default_cap = 10;
+    private static int DEFAULT_CAP = 10;
 
-   
-    
     private int[] data;
+
     private int size;
 
-    public ArrayList(int value){   
-        this.data[] = ;
+
+    /** 
+     * Makes a new empty ArrayList 
+    */
+    public ArrayList(){   
+        this.data = new int[DEFAULT_CAP];
         this.size = 0;
     }
 
@@ -30,33 +32,76 @@ public class ArrayList {
         }
     }
 
+
+    /** 
+     *  Adds <code>value</code> to the end of the list. Worst case runtime-O(1)
+     * 
+     * @param value the value to add to the end of the list.
+    */
     public void add(int value) {
+        ensureCapacity();
         data[size] = value;
+        size++;
 
     }
 
     /**
+     * Returns the size of the arraylist. Worst case runtime-O(1)
+     * 
      * @return the number of elements in the list
      */
     public int size() {
-        throw new UnsupportedOperationException("Unimplemented method 'size'");
+        return this.size;
     }
 
     /**
+     * Returns the value at <code>index</code> in the arraylist. Worst case runtime-O(1)
+     * 
+     * 
      * @param index the index of the element to retrieve
      * @return the value at the specified <code>index</code>
+     * @throws IndexOutOfBoundsException if index is out of the range.
      */
     public int get(int index) {
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
+        if (index < 0 || index >= size){
+            throw new IndexOutOfBoundsException();
+        }
+        return data[index];
     }
 
     /**
-     * Removes the value at <code>index</code> from the list
+     * Removes the value at <code>index</code> from the list. Worst case runtime-O(n)
      * 
      * @param index the index of the element to remove
      * @return the element at <code>index</code>
+     * @throws IndexOutOfBoundsException if index is out of the range.
      */
     public int remove(int index) {
-        throw new UnsupportedOperationException("Unimplemented method 'remove'");
+        if (index < 0 || index >= size){
+            throw new IndexOutOfBoundsException();
+        }
+        int removed = data[index];
+        for(int i = index; i < size - 1; i++ ){
+            data[i] = data[i + 1];
+
+        } 
+        size--;
+        return removed;
+    }
+
+    public static void main(String[] args) {
+        ArrayList list = new ArrayList();
+        list.add(10);
+        list.add(30);
+        list.add(50);
+
+        System.out.println("Size: " + list.size());
+        System.out.println("Removed: " + list.remove(1));
+        System.out.println("Get: " + list.get(1));
+        System.out.println("Size: " + list.size());
+        System.out.println("Get: " + list.get(1));
+        
     }
 }
+
+

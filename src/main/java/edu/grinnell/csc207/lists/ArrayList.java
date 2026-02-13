@@ -8,6 +8,7 @@ import java.util.Arrays;
 public class ArrayList {
     /**
      * Adds <code>value</code> to the end of the list
+     * 
      * @param value the value to add to the end of the list
      */
 
@@ -17,11 +18,10 @@ public class ArrayList {
 
     private int size;
 
-
-    /** 
-     * Makes a new empty ArrayList 
-    */
-    public ArrayList(){   
+    /**
+     * Makes a new empty ArrayList
+     */
+    public ArrayList() {
         this.data = new int[DEFAULT_CAP];
         this.size = 0;
     }
@@ -32,12 +32,11 @@ public class ArrayList {
         }
     }
 
-
-    /** 
-     *  Adds <code>value</code> to the end of the list. Worst case runtime-O(1)
+    /**
+     * Adds <code>value</code> to the end of the list. Worst case runtime-O(1)
      * 
      * @param value the value to add to the end of the list.
-    */
+     */
     public void add(int value) {
         ensureCapacity();
         data[size] = value;
@@ -55,7 +54,8 @@ public class ArrayList {
     }
 
     /**
-     * Returns the value at <code>index</code> in the arraylist. Worst case runtime-O(1)
+     * Returns the value at <code>index</code> in the arraylist. Worst case
+     * runtime-O(1)
      * 
      * 
      * @param index the index of the element to retrieve
@@ -63,41 +63,48 @@ public class ArrayList {
      * @throws IndexOutOfBoundsException if index is out of the range.
      */
     public int get(int index) {
-        if (index < 0 || index >= size){
+        if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
         return data[index];
     }
 
     /**
-     * Removes the value at <code>index</code> from the list. Worst case runtime-O(n)
+     * Removes the value at <code>index</code> from the list. Worst case
+     * runtime-O(n)
      * 
      * @param index the index of the element to remove
      * @return the element at <code>index</code>
      * @throws IndexOutOfBoundsException if index is out of the range.
      */
     public int remove(int index) {
-        if (index < 0 || index >= size){
+        if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
         int removed = data[index];
-        for(int i = index; i < size - 1; i++ ){
+        for (int i = index; i < size - 1; i++) {
             data[i] = data[i + 1];
 
-        } 
+        }
         size--;
         return removed;
     }
 
-    public boolean isEmpty()
-    {
+    /**
+     * Reports whether the list is empty. Worst case runtime-O(1)
+     * 
+     * @return true or false based on whether teh list is empty.
+     */
+    public boolean isEmpty() {
         return size == 0;
     }
 
-    public void clear()
-    {
-        for(int i = size-1; i>=0; i--)
-        {
+    /**
+     * Removes all the valuesfrom the list. Worst case
+     * runtime-O(n)
+     */
+    public void clear() {
+        for (int i = size - 1; i >= 0; i--) {
             remove(i);
         }
 
@@ -116,8 +123,6 @@ public class ArrayList {
         System.out.println("Get: " + list.get(1));
         list.clear();
         System.out.println("Empty: " + list.isEmpty());
-        
+
     }
 }
-
-

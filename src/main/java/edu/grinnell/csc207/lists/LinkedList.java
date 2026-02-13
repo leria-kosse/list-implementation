@@ -13,12 +13,12 @@ public class LinkedList {
         public int value;
         // The next node in the list
         public Node next;
-        
+
         /**
-         * Builds a new node. 
+         * Builds a new node.
          * 
          * @param value the value to store
-         * @param next the next node
+         * @param next  the next node
          */
         public Node(int value, Node next) {
             this.value = value;
@@ -100,7 +100,8 @@ public class LinkedList {
     }
 
     /**
-     * Removes the value at <code>index</code> from the list. Worst case runtime-O(n)
+     * Removes the value at <code>index</code> from the list. Worst case
+     * runtime-O(n)
      * 
      * @param index the index of the element to remove
      * @return the element at <code>index</code>
@@ -114,7 +115,7 @@ public class LinkedList {
         }
         if (index == 0) {
             removed = head.value;
-            head = head.next; //  Move head pointer to the next node
+            head = head.next; // Move head pointer to the next node
         } else {
             Node current = head;
             for (int i = 0; i < index - 1; i++) {
@@ -127,15 +128,21 @@ public class LinkedList {
         return removed;
     }
 
-    public boolean isEmpty()
-    {
+    /**
+     * Reports whether the list is empty. Worst case runtime-O(1)
+     * 
+     * @return true or false based on whether teh list is empty.
+     */
+    public boolean isEmpty() {
         return size == 0;
     }
 
-    public void clear()
-    {
-        for(int i = size-1; i>=0; i--)
-        {
+    /**
+     * Removes all the valuesfrom the list. Worst case
+     * runtime-O(n)
+     */
+    public void clear() {
+        for (int i = size - 1; i >= 0; i--) {
             remove(i);
         }
 

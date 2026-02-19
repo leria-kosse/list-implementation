@@ -1,6 +1,8 @@
 # List Implementation lab
 
-Authors: (_TODO: fill in names here!_)
+Authors:  
+*  Robel Gebeyehu
+*  Valeriia Kosse
 
 ## Build commands
 
@@ -10,6 +12,6 @@ Authors: (_TODO: fill in names here!_)
 
 ## Resources
 
-*   (_TODO: fill in resources here!_)
-*   ...
-*   ...
+*   Lab website: https://osera.cs.grinnell.edu/ttap/data-structures-labs/list-implementation.html
+*   List&Array reading: https://osera.cs.grinnell.edu/ttap/data-structures/sequential-structures.html
+*   PM help in class 
